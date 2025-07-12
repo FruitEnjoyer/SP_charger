@@ -14,5 +14,5 @@ BMS::Controller::Controller()
 
 void BMS::Controller::DoBalance()
 {
-
+    mcp3422.newConversion();
 }

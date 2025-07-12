@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include "../third_party/MCP342x.h"
+
 namespace BMS{
 
 enum BMS_status {UPPER_OPEN, LOWER_OPEN, ALL_OPEN, ALL_CLOSE};
@@ -20,6 +22,7 @@ public:
 
 private:
     BMS_status status;
+    MCP342x mcp3422;
 };
 
 };
