@@ -1,2 +1,0 @@
-../app/bms.cpp:10:1:BMS::Controller::Controller()	16	static
-../app/bms.cpp:15:6:void BMS::Controller::DoBalance()	16	static
