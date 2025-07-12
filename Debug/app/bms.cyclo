@@ -1,0 +1,2 @@
+../app/bms.cpp:10:1:BMS::Controller::Controller()	1
+../app/bms.cpp:15:6:void BMS::Controller::DoBalance()	1
