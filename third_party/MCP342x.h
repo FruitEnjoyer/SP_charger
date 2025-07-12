@@ -30,10 +30,11 @@ Contact : batto@hotmail.fr
  */
 
 
-#ifndef MCP342x_H
-#define MCP342x_H
+#pragma once
 
 #include "main.h"
+
+namespace MCP342x{
 
 using byte = uint8_t;
 
@@ -95,4 +96,4 @@ private:
 
 };
 
-#endif
+};

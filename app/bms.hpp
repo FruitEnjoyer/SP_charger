@@ -22,7 +22,7 @@ public:
 
 private:
     BMS_status status;
-    MCP342x mcp3422;
+    MCP342x::MCP342x mcp3422;
 };
 
 };

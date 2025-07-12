@@ -31,29 +31,29 @@ Contact : batto@hotmail.fr
 
 #include "MCP342x.h"
 
-MCP342x::MCP342x()
+MCP342x::MCP342x::MCP342x()
 {
 // TODO: поставить правильный адрес
     _adresse = 0x65;
 
 }
 
-MCP342x::~MCP342x()
+MCP342x::MCP342x::~MCP342x()
 {
 }
 
-void MCP342x::begin(uint8_t setMod)
+void MCP342x::MCP342x::begin(uint8_t setMod)
 {
 #if 0
     Wire.begin();
 #endif
 }
 
-uint8_t MCP342x::getAddress()
+uint8_t MCP342x::MCP342x::getAddress()
 {
     return _adresse;
 }
-uint8_t MCP342x::getConfiguration()
+uint8_t MCP342x::MCP342x::getConfiguration()
 {
 #if 0
     Wire.requestFrom(_adresse, (_resolution == RESOLUTION_18_BITS) ? 4 : 3);
@@ -70,7 +70,7 @@ uint8_t MCP342x::getConfiguration()
     return (_buffer[(_resolution == RESOLUTION_18_BITS ? 3 : 2)]);
 }
 
-void MCP342x::setConfiguration(byte channel, int resolution, int mode, int pga)
+void MCP342x::MCP342x::setConfiguration(byte channel, int resolution, int mode, int pga)
 {
 
     channel    &= 0b11;
@@ -97,7 +97,7 @@ void MCP342x::setConfiguration(byte channel, int resolution, int mode, int pga)
 #endif
 }
 
-void MCP342x::newConversion()
+void MCP342x::MCP342x::newConversion()
 {
     uint8_t cfgbyte = getConfiguration();
 
@@ -108,13 +108,13 @@ void MCP342x::newConversion()
 #endif
 }
 
-bool MCP342x::isConversionFinished()
+bool MCP342x::MCP342x::isConversionFinished()
 {
     uint8_t result = !(getConfiguration() & 0b10000000);
     return result;
 }
 
-void MCP342x::getRawDatas(uint8_t buffer[4])
+void MCP342x::MCP342x::getRawDatas(uint8_t buffer[4])
 {
     for(int i = 0; i < 4; ++i)
     {
@@ -122,7 +122,7 @@ void MCP342x::getRawDatas(uint8_t buffer[4])
     }
 }
 
-int32_t MCP342x::measure()
+int32_t MCP342x::MCP342x::measure()
 {
     union resultUnion
     {
