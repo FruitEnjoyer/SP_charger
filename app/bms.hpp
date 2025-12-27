@@ -19,6 +19,7 @@ public:
     Controller();
     ~Controller();
     void DoBalance();
+    
 private:
     BMS_status status;
     MCP342x::MCP342x mcp3422;
